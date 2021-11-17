@@ -1,4 +1,4 @@
-**질문**: 차원의 저주는 어떻습니까?[38:16](https://www.youtube.com/watch?t=38m16s&v=CzdWqFTmn0Y&feature=youtu.be) 여러분이 자주 듣는 두가지 개념 차원의 저주(curse of dimensionality)와 공짜 점심은 없다(No Free Lunch Theorem)가 있습니다.
+**질문**: 차원의 저주는 어떻습니까?[[38:16]](https://www.youtube.com/watch?t=38m16s&v=CzdWqFTmn0Y&feature=youtu.be) 여러분이 자주 듣는 두가지 개념 차원의 저주(curse of dimensionality)와 공짜 점심은 없다(No Free Lunch Theorem)가 있습니다.
 그것들은 둘 다 대체로 무위미하고 기본적으로 어리석지만, 현장에 있는 많은 사람들이 그것을 알 뿐만 아니라 반대로 생각하므로 설명할 가치가 있습니다.
 차원의 저주는 열이 많을수록 점점 더 비어 있는 공간이 생성된다는 생각입니다.
 차원이 많을수록 모든 점이 그 공간의 가장자리에 더 많이 위치한다는 매혹적인 수학적 아이디어가 있습니다. 만약 사물이 무작위인 단일 차원일 경우에는 전체에 흩어져 있습니다.
