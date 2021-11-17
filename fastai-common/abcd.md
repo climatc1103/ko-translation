@@ -78,9 +78,19 @@ def add_datepart(df, fldname, drop=True):
     df[targ_pre+'Elapsed'] = fld.astype(np.int64) // 10**9
     if drop: df.drop(fldname, axis=1, inplace=True)
 ```
-getattr - 개체 내부를 살펴보고 해당 이름의 속성을 찾습니다.
-drop=True - 지정하지 않으면 숫자가 아니기 때문에 "saledate"를 직접 사용할 수 없기 때문에 날짜 시간 필드가 삭제됩니다.
-fld- Pandas 시리즈
-dt – fld는 시간 날짜 오브젝트인 pandas 시리즈에만 적용되기 때문에 “년도” 가 없습니다..
-그래서 Pandas가 하는 일은 그것들이 무엇인지에 특정한 속성 내에서 다른 메소드들을 분리하는 것입니다
+* ```getattr``` - 개체 내부를 살펴보고 해당 이름의 속성을 찾습니다.
+* ```drop=True``` - 지정하지 않으면 숫자가 아니기 때문에 "saledate"를 직접 사용할 수 없기 때문에 날짜 시간 필드가 삭제됩니다.
+
+```
+fld = df_raw.saledate
+fld.dt.year
+```
+* ```fld```- Pandas 시리즈
+* ```dt``` – ```fld```는 시간 날짜 오브젝트인 pandas 시리즈에만 적용되기 때문에 “년도” 가 없습니다.
+그래서 Pandas가 하는 일은 그것들이 무엇인지에 특정한 속성 내에서 다른 메소드들을 분리하는 것입니다.
+
+```
+add_datepart(df_raw, 'saledate')
+df_raw.saleYear.head()
+```
 
