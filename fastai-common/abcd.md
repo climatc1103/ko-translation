@@ -34,6 +34,7 @@ Scikit-learn 의 모든 것은 같은 형태를 가지고 있습니다.
 * axis=1 은 열을 제거하는 것을 의미합니다.
 * shift + tab은 Jupyter 노트북에서 함수의 파라미터 검사를 불러옵니다.
 * "list-like"는 파이썬에서 색인화할 수 있는 모든 것을 의미합니다.
+<img src="https://miro.medium.com/max/875/1*7tmiacXQ-X1x6KACz-L5Hw.png" width="450px" height="300px"></img><br>
 위의 코드는 에러가 날것입니다. 
 데이터 세트 내에 "Conventional" 값이 있으며, 해당 문자열을 사용하여 모델을 만드는 방법을 알지 못했습니다.
 우리는 대부분의 기계 학습 모델과  랜덤 포레스트에 숫자를 전달해야 합니다.
