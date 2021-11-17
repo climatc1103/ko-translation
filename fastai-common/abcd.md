@@ -61,6 +61,23 @@ Scikit-learn 의 모든 것은 같은 형태를 가지고 있습니다.
 
 ```add_datepart``` 메서드는 범주 구성을 위해 전체 날짜 시간에서 특정 날짜 필드를 추출합니다. 날짜와 시간으로 작업할 때는 항상 이 변수 추출 단계를 고려해야 합니다.
 이러한 추가 필드로 날짜와 시간을 확장하지 않으면 이러한 세분화에서 시간 함수로 추세/사이클 동작을 캡처할 수 없습니다.
+
+
+```
+def add_datepart(df, fldname, drop=True):
+    fld = df[fldname]
+    if not np.issubdtype(fld.dtype, np.datetime64):
+        df[fldname] = fld = pd.to_datetime(fld, 
+                                     infer_datetime_format=True)
+    targ_pre = re.sub('[Dd]ate$', '', fldname)
+    for n in ('Year', 'Month', 'Week', 'Day', 'Dayofweek', 
+            'Dayofyear', 'Is_month_end', 'Is_month_start', 
+            'Is_quarter_end', 'Is_quarter_start', 'Is_year_end', 
+            'Is_year_start'):
+        df[targ_pre+n] = getattr(fld.dt,n.lower())
+    df[targ_pre+'Elapsed'] = fld.astype(np.int64) // 10**9
+    if drop: df.drop(fldname, axis=1, inplace=True)
+```
 getattr - 개체 내부를 살펴보고 해당 이름의 속성을 찾습니다.
 drop=True - 지정하지 않으면 숫자가 아니기 때문에 "saledate"를 직접 사용할 수 없기 때문에 날짜 시간 필드가 삭제됩니다.
 fld- Pandas 시리즈
