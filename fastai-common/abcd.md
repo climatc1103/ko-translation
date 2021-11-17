@@ -23,11 +23,8 @@ Fast.ai는 적절하게 전처리 하고 매개 변수를 설정하는 표준 �
 ```
 m = RandomForestRegressor(n_jobs=-1)
 ```
-<br>
 * RandomForestRegressor — 회귀 분석기는 연속 변수를 예측하는 방법(예: 회귀 분석)입니다.
-<br>
 * RandomForestClassifier — 분류자는 범주형 변수를 예측하는 방법입니다. (예: 분류)
-<br>
 ```
 m.fit(df_raw.drop('SalePrice', axis=1), df_raw.SalePrice)
 ```
